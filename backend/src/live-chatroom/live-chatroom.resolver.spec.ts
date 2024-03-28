@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserResolver } from './user.resolver';
+import { LiveChatroomResolver } from './live-chatroom.resolver';
 
-describe('UserResolver', () => {
-  let resolver: UserResolver;
+describe('LiveChatroomResolver', () => {
+  let resolver: LiveChatroomResolver;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [UserResolver],
+      providers: [LiveChatroomResolver],
     }).compile();
 
-    resolver = module.get<UserResolver>(UserResolver);
+    resolver = module.get<LiveChatroomResolver>(LiveChatroomResolver);
   });
 
   it('should be defined', () => {
