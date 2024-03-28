@@ -21,10 +21,13 @@ type Mutation {
   logout: String!
   refreshToken: String!
   register(registerInput: RegisterDto!): RegisterResponse!
+  updateProfile(file: Upload, fullname: String!): User!
 }
 
 type Query {
+  getUsersOfChatroom(chatroomId: Float!): [User!]!
   hello: String!
+  searchUsers(fullname: String!): [User!]!
 }
 
 input RegisterDto {
@@ -37,6 +40,9 @@ input RegisterDto {
 type RegisterResponse {
   user: User
 }
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
 
 type User {
   avatarUrl: String
